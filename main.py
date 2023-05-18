@@ -9,6 +9,7 @@ import serial.tools.list_ports
 import tkinter as tk
 from tkinter import simpledialog
 from tkinter import messagebox
+from playsound import playsound
 
 messagebox.showinfo("Instructions:", "1. Make sure the arduino box is connected to a port in your pc."
                     +"\n2. Connect your computer and mobile phone to the same wifi network.\n"
@@ -355,9 +356,7 @@ while True:
             wavFileName = "PFiveHundred.wav"
         elif (moneyValueDetected == "1000"):
             wavFileName = "PFiveThousand.wav"
-        # wave_obj = sa.WaveObject.from_wave_file(wavFileName)
-        # play_obj = wave_obj.play()
-        # play_obj.wait_done()
+        playsound(wavFileName)
 
     
     # Exit on 'q' press
