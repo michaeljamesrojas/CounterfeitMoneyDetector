@@ -20,7 +20,7 @@ ports = serial.tools.list_ports.comports()
 # Print the list of ports
 for port in ports:
     # print(port)
-    if ("Arduino Uno" in str(port)):
+    if ("USB" in str(port)):
         portToUse = (str(port)).split(" - ")[0]
 print(f"Using: {portToUse}")
 
@@ -160,7 +160,7 @@ def squareImage(img):
 root = tk.Tk()
 root.withdraw()
 urlOrCamIndex = simpledialog.askstring("URL or Camera Index", "Enter the URL or camera index:                 ", 
-                                       initialvalue="http://192.168.1.16:8080/video")
+                                       initialvalue="http://192.168.#.#:8080/video")
 cap = cv2.VideoCapture(urlOrCamIndex)
 
 # check if camera opened successfully
@@ -174,7 +174,7 @@ moneyValueDetected = None
 threshVal = 132 #uvsi
 threshVal = 149 #uvsi
 threshVal = 147 #uvsi
-threshVal = simpledialog.askinteger("UV threshold value", "Enter the UV threshold value for fake/real detection (default: 147):", initialvalue=147)
+threshVal = simpledialog.askinteger("UV threshold value", "Enter the UV threshold value for fake/real detection (default: 130):", initialvalue=130)
 minimumValueVotes = 2
 mainThreshold = 80
 obj = {"200": 0, "20": 0, "500": 0, "50": 0, "1000": 0, "100": 0 }
@@ -364,8 +364,8 @@ while True:
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-    # for i in range(25):
-    #     success = cap.grab()
+    for i in range(20):
+        success = cap.grab()
         # print(f"success {i}")
     # cv2.waitKey(0)
     # time.sleep(1)
