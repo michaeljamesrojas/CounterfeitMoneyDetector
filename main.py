@@ -10,7 +10,7 @@ import tkinter as tk
 from tkinter import simpledialog
 from tkinter import messagebox
 from playsound import playsound
-
+import winsound
 messagebox.showinfo("Instructions:", "1. Make sure the arduino box is connected to a port in your pc."
                     +"\n2. Connect your computer and mobile phone to the same wifi network.\n"
                     +"3. Download/Open IP Webcam app and type the ip that is shown on screen in the next inputs.")
@@ -356,7 +356,7 @@ while True:
             wavFileName = "PFiveHundred.wav"
         elif (moneyValueDetected == "1000"):
             wavFileName = "PFiveThousand.wav"
-        playsound(wavFileName)
+        winsound.PlaySound("Pfifty.wav", winsound.SND_FILENAME)
 
     
     # Exit on 'q' press
