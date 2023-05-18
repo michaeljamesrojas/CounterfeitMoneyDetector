@@ -1,7 +1,10 @@
-import simpleaudio as sa
+# import simpleaudio as sa
 
-wave_obj = sa.WaveObject.from_wave_file("Pfifty.wav")
-play_obj = wave_obj.play()
+# wave_obj = sa.WaveObject.from_wave_file("Pfifty.wav")
+# play_obj = wave_obj.play()
 
-play_obj.wait_done()
-print("haha")
+# play_obj.wait_done()
+# print("haha")
+
+from playsound import playsound
+playsound('Pfifty.wav')
