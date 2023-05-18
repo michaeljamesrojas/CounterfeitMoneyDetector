@@ -336,7 +336,8 @@ while True:
         # Count the number of non-zero pixels
         non_zero_pixels = cv2.countNonZero(Hthresh)
         # Check if all pixels are white
-        if non_zero_pixels == total_pixels:
+        isFake = non_zero_pixels == total_pixels
+        if isFake:
             # print("FAKE!!!")
             ser.write(b'1')
         else:
@@ -345,18 +346,30 @@ while True:
             # response = ser.readline().decode().strip()
 
         if(moneyValueDetected == "20"):
-            wavFileName = "Ptwenty.wav"
+            # wavFileName = "Ptwenty.wav"
+            wavFileName = "20"
         elif(moneyValueDetected == "50"):
-            wavFileName = "Pfifty.wav"
+            # wavFileName = "Pfifty.wav"
+            wavFileName = "50"
         elif (moneyValueDetected == "100"):
-            wavFileName = "POneHundred.wav"
+            # wavFileName = "POneHundred.wav"
+            wavFileName = "100"
         elif (moneyValueDetected == "200"):
-            wavFileName = "PTwoHundred.wav"
+            # wavFileName = "PTwoHundred.wav"
+            wavFileName = "200"
         elif (moneyValueDetected == "500"):
-            wavFileName = "PFiveHundred.wav"
+            # wavFileName = "PFiveHundred.wav"
+            wavFileName = "500"
         elif (moneyValueDetected == "1000"):
-            wavFileName = "PFiveThousand.wav"
-        winsound.PlaySound(wavFileName, winsound.SND_FILENAME)
+            # wavFileName = "PFiveThousand.wav"
+            wavFileName = "1000"
+        
+        if (isFake):
+            realOrFake = "fake"
+        else:
+            realOrFake = "real"
+        winsound.PlaySound(f"./sounds/{realOrFake}_cebuano.wav", winsound.SND_FILENAME)
+        winsound.PlaySound(f"./sounds/{wavFileName}_cebuano.wav", winsound.SND_FILENAME)
 
     
     # Exit on 'q' press
