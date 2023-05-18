@@ -356,7 +356,7 @@ while True:
             wavFileName = "PFiveHundred.wav"
         elif (moneyValueDetected == "1000"):
             wavFileName = "PFiveThousand.wav"
-        winsound.PlaySound("Pfifty.wav", winsound.SND_FILENAME)
+        winsound.PlaySound(wavFileName, winsound.SND_FILENAME)
 
     
     # Exit on 'q' press
