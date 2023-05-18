@@ -20,7 +20,7 @@ portToUse = "COM6"
 ports = serial.tools.list_ports.comports()
 # Print the list of ports
 for port in ports:
-    # print(port)
+    print(port)
     if ("USB" in str(port)):
         portToUse = (str(port)).split(" - ")[0]
 print(f"Using: {portToUse}")
